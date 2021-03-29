@@ -1,0 +1,31 @@
+on shortPress do
+   gpio,12,0
+   delay 500
+   gpio,12,2
+endon
+
+on LongPress do
+   gpio,12,0
+   delay 5000
+   gpio,12,2
+endon
+
+on poweron do
+   if [power#State]=0
+     event,shortPress
+   endif
+endon
+
+on poweroff do
+   if [power#State]=1
+     event,longPress
+   endif
+endon
+
+on reboot do
+   if [power#State]=1
+     event,longPress
+     delay 5000
+     event,shortPress
+   endif
+endon
