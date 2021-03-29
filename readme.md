@@ -15,3 +15,5 @@ http://наш_ip/control?cmd=event,poweron
 http://наш_ip/control?cmd=event,poweroff
 
 http://наш_ip/control?cmd=event,reboot
+
+poweron включает ПК, если он был выключен, poweroff принудительно выключает работающий ПК, имитируя зажатие кнопки power на 5 секунд, reboot собственно их комбинирует, сначала принудительно выключает и через 5 секунд снова его включает.
